@@ -7,6 +7,7 @@ target 'podcast' do
 
   # Pods for podcast
   pod 'Firebase/Core'
+  pod 'Firebase/Storage'
 
   target 'podcastTests' do
     inherit! :search_paths

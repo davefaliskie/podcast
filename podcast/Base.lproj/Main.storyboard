@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -37,6 +38,9 @@
                                 <rect key="frame" x="133" y="331" width="109" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Upload Podcast"/>
+                                <connections>
+                                    <segue destination="zGI-0a-q1F" kind="show" id="bgJ-hg-kyT"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eoR-Pb-P0o">
                                 <rect key="frame" x="167" y="444" width="42" height="30"/>
@@ -51,6 +55,76 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="121.88905547226388"/>
+        </scene>
+        <!--Upload Audio View Controller-->
+        <scene sceneID="pEi-6U-0fR">
+            <objects>
+                <viewController id="zGI-0a-q1F" customClass="UploadAudioViewController" customModule="podcast" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tVA-mW-aro">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Upload new Podcast" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Vf-Oc-i9R">
+                                <rect key="frame" x="16" y="76" width="343" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bR5-p1-P8R">
+                                <rect key="frame" x="16" y="259" width="343" height="30"/>
+                                <state key="normal" title="Upload Test audio"/>
+                                <connections>
+                                    <action selector="uploadBtn:" destination="zGI-0a-q1F" eventType="touchUpInside" id="AhK-gC-Yu9"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jE6-YI-Lin">
+                                <rect key="frame" x="16" y="449" width="343" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="22A-pI-d4v">
+                                <rect key="frame" x="16" y="420" width="343" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1ee-LS-lGQ">
+                                <rect key="frame" x="16" y="516" width="343" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.56031829119999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="phu-aQ-zFi" firstAttribute="bottom" secondItem="1ee-LS-lGQ" secondAttribute="bottom" constant="151" id="6Em-jg-KzH"/>
+                            <constraint firstItem="3Vf-Oc-i9R" firstAttribute="trailing" secondItem="tVA-mW-aro" secondAttribute="trailingMargin" id="79g-Pc-5S7"/>
+                            <constraint firstItem="bR5-p1-P8R" firstAttribute="leading" secondItem="22A-pI-d4v" secondAttribute="leading" id="AOa-5t-OXc"/>
+                            <constraint firstItem="1ee-LS-lGQ" firstAttribute="top" secondItem="jE6-YI-Lin" secondAttribute="bottom" constant="46" id="BkE-Ff-Noa"/>
+                            <constraint firstItem="3Vf-Oc-i9R" firstAttribute="trailing" secondItem="bR5-p1-P8R" secondAttribute="trailing" id="GT1-15-ldR"/>
+                            <constraint firstItem="22A-pI-d4v" firstAttribute="trailing" secondItem="jE6-YI-Lin" secondAttribute="trailing" id="TZ4-2q-4tY"/>
+                            <constraint firstItem="3Vf-Oc-i9R" firstAttribute="top" secondItem="phu-aQ-zFi" secondAttribute="top" constant="56" id="UMr-xm-i1X"/>
+                            <constraint firstItem="jE6-YI-Lin" firstAttribute="top" secondItem="22A-pI-d4v" secondAttribute="bottom" constant="8" symbolic="YES" id="XJE-BY-CJp"/>
+                            <constraint firstItem="22A-pI-d4v" firstAttribute="leading" secondItem="jE6-YI-Lin" secondAttribute="leading" id="YPq-l1-Wuu"/>
+                            <constraint firstItem="3Vf-Oc-i9R" firstAttribute="leading" secondItem="bR5-p1-P8R" secondAttribute="leading" id="cNm-mZ-fGN"/>
+                            <constraint firstItem="jE6-YI-Lin" firstAttribute="trailing" secondItem="1ee-LS-lGQ" secondAttribute="trailing" id="d8C-LA-YS0"/>
+                            <constraint firstItem="bR5-p1-P8R" firstAttribute="top" secondItem="tVA-mW-aro" secondAttribute="top" constant="259" id="l4P-ba-BDn"/>
+                            <constraint firstItem="bR5-p1-P8R" firstAttribute="trailing" secondItem="22A-pI-d4v" secondAttribute="trailing" id="oRm-gC-5rs"/>
+                            <constraint firstItem="3Vf-Oc-i9R" firstAttribute="leading" secondItem="tVA-mW-aro" secondAttribute="leadingMargin" id="rkG-3f-XxD"/>
+                            <constraint firstItem="jE6-YI-Lin" firstAttribute="leading" secondItem="1ee-LS-lGQ" secondAttribute="leading" id="wH7-rw-D5Z"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="phu-aQ-zFi"/>
+                    </view>
+                    <connections>
+                        <outlet property="statusLabel" destination="jE6-YI-Lin" id="gKF-mD-00O"/>
+                        <outlet property="successLabel" destination="1ee-LS-lGQ" id="UXn-Jp-oUz"/>
+                        <outlet property="uploadBtn" destination="bR5-p1-P8R" id="0YL-tc-4TM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mNr-rI-x8Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="875.71214392803608"/>
         </scene>
         <!--Podcasts Table View Controller-->
         <scene sceneID="vfp-yH-GJc">
