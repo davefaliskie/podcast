@@ -8,14 +8,35 @@
 
 import Firebase
 
-class UploadAudioViewController: UIViewController {
+class UploadAudioViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate {
     
     @IBOutlet weak var uploadBtn: UIButton!
     @IBOutlet weak var statusLabel: UILabel!
     @IBOutlet weak var successLabel: UILabel!
+    @IBOutlet weak var titleTF: UITextField!
+    @IBOutlet weak var descriptionTV: UITextView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        titleTF.delegate = self
+        descriptionTV.delegate = self
+        
+        // add border to description text view (make this a function?)
+        descriptionTV!.layer.borderWidth = 1
+        descriptionTV!.layer.cornerRadius = 5
+        descriptionTV!.layer.borderColor = UIColor.lightGray.cgColor
+        
+        titleTF!.layer.borderWidth = 1
+        titleTF!.layer.cornerRadius = 5
+        titleTF!.layer.borderColor = UIColor.lightGray.cgColor
+        
+        
+        //Default checking and disabling of the Button
+        if (titleTF.text?.isEmpty)!{
+            uploadBtn.isEnabled = false
+        }
         
     }
     
@@ -24,43 +45,44 @@ class UploadAudioViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    // What happens when the upload button is pressed
     @IBAction func uploadBtn(_ sender: Any) {
         uploadFromFile()
     }
     
-//    func uploadFromFile() {
-//        let storage = Storage.storage()
-//        let storageRef = storage.reference()
-//
-//        // File located on disk
-//        let localFile = URL(fileURLWithPath: "/Users/DaveFaliskie/Desktop/test55.m4a")
-//
-//        // Create a reference to the file you want to upload
-//        let castRef = storageRef.child("podcasts/test55.m4a")
-//
-//        // Upload the file to the path "podcasts/test55.m4a"
-//        let uploadTask = castRef.putFile(from: localFile, metadata: nil) { metadata, error in
-//
-//        }
-//    }
-    
+    // Disable the upload button until some text is entered
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        
+        // Find out what the text field will be after adding the current edit
+        let titleText = (titleTF.text! as NSString).replacingCharacters(in: range, with: string)
+        
+        //Checking if the input field is empty
+        if titleText.trimmingCharacters(in: CharacterSet.whitespaces).isEmpty{
+            // Disable Save Button
+            uploadBtn.isEnabled = false
+        } else {
+            // Enable Save Button
+            uploadBtn.isEnabled = true
+        }
+        return true
+    }
     
     func uploadFromFile() {
         let storage = Storage.storage()
         let storageRef = storage.reference()
         
         // Local file you want to upload
-        let localFile = URL(fileURLWithPath: "/Users/DaveFaliskie/Desktop/15minepisode.mp3")
+        let localFile = URL(fileURLWithPath: "/Users/DaveFaliskie/Desktop/test55.m4a")
         
-        // Create a reference to the file you want to upload
-        let castRef = storageRef.child("podcasts/15minepisode.mp3")
+        // Create a reference to the file you want to upload, this gives the name meta data.
+        let castRef = storageRef.child("podcasts/\(titleTF.text!)")
         
         // Create the file metadata
         let metadata = StorageMetadata()
 //        metadata.contentType = "podcast/audio"
         metadata.customMetadata = [
-            "UserName" : "Dave",
-            "Description" : "Here is a sample of an actual podcast - 15 minutes in length. Let's see how long this upload      takes and what kind of storage it takes up."
+            "UserName" : "Dave (Update to user name)",
+            "Description" : self.descriptionTV.text
         ]
         
         
@@ -85,7 +107,7 @@ class UploadAudioViewController: UIViewController {
         
         uploadTask.observe(.success) { snapshot in
             // Upload completed successfully
-            self.successLabel.text = "Your file was Successfully Uploaded!"
+            self.successLabel.text = "\(self.titleTF.text!) Successfully Uploaded!"
         }
         
         uploadTask.observe(.failure) { snapshot in

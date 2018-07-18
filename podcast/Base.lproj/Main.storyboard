@@ -19,36 +19,45 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Podcast App" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="koG-mA-Ckn">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Podcast App" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="koG-mA-Ckn">
                                 <rect key="frame" x="16" y="51" width="343" height="28"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="28" id="q3b-21-dgh"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <color key="textColor" red="0.0" green="0.56284224989999998" blue="0.31881666180000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DOZ-0Z-eyx">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DOZ-0Z-eyx">
                                 <rect key="frame" x="137" y="226" width="101" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="View Podcasts"/>
                                 <connections>
                                     <segue destination="wVP-mJ-trx" kind="show" id="evd-zg-kAy"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I9n-4Q-Rmn">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I9n-4Q-Rmn">
                                 <rect key="frame" x="133" y="331" width="109" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Upload Podcast"/>
                                 <connections>
                                     <segue destination="zGI-0a-q1F" kind="show" id="bgJ-hg-kyT"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eoR-Pb-P0o">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eoR-Pb-P0o">
                                 <rect key="frame" x="167" y="444" width="42" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Log In"/>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.83100567790000002" green="1" blue="0.4398241832" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="I9n-4Q-Rmn" firstAttribute="top" secondItem="DOZ-0Z-eyx" secondAttribute="bottom" constant="75" id="1Wf-kh-0d7"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="eoR-Pb-P0o" secondAttribute="bottom" constant="193" id="6JX-Q6-smf"/>
+                            <constraint firstItem="I9n-4Q-Rmn" firstAttribute="centerX" secondItem="eoR-Pb-P0o" secondAttribute="centerX" id="8SY-cg-hEn"/>
+                            <constraint firstItem="DOZ-0Z-eyx" firstAttribute="centerX" secondItem="I9n-4Q-Rmn" secondAttribute="centerX" id="BhP-91-iis"/>
+                            <constraint firstItem="koG-mA-Ckn" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="Ni5-0O-fK0"/>
+                            <constraint firstItem="koG-mA-Ckn" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="ShS-vN-9pJ"/>
+                            <constraint firstItem="koG-mA-Ckn" firstAttribute="centerX" secondItem="DOZ-0Z-eyx" secondAttribute="centerX" id="XAW-LL-0Sl"/>
+                            <constraint firstItem="koG-mA-Ckn" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="31" id="niF-q3-zFp"/>
+                            <constraint firstItem="eoR-Pb-P0o" firstAttribute="top" secondItem="I9n-4Q-Rmn" secondAttribute="bottom" constant="83" id="w21-8b-00V"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
@@ -70,13 +79,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bR5-p1-P8R">
-                                <rect key="frame" x="16" y="259" width="343" height="30"/>
-                                <state key="normal" title="Upload Test audio"/>
-                                <connections>
-                                    <action selector="uploadBtn:" destination="zGI-0a-q1F" eventType="touchUpInside" id="AhK-gC-Yu9"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jE6-YI-Lin">
                                 <rect key="frame" x="16" y="449" width="343" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -95,30 +97,78 @@
                                 <color key="textColor" red="0.0" green="0.56031829119999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YaH-pW-KGc">
+                                <rect key="frame" x="16" y="171" width="343" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Podcast Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5oX-fj-OHx">
+                                <rect key="frame" x="16" y="142" width="343" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bR5-p1-P8R">
+                                <rect key="frame" x="16" y="342" width="343" height="30"/>
+                                <state key="normal" title="Upload Test audio"/>
+                                <connections>
+                                    <action selector="uploadBtn:" destination="zGI-0a-q1F" eventType="touchUpInside" id="AhK-gC-Yu9"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Koc-Gf-ZWW">
+                                <rect key="frame" x="16" y="221" width="343" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="interactive" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="HOk-5l-C5J">
+                                <rect key="frame" x="16" y="250" width="343" height="84"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="84" id="2UP-dR-MT1"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="phu-aQ-zFi" firstAttribute="bottom" secondItem="1ee-LS-lGQ" secondAttribute="bottom" constant="151" id="6Em-jg-KzH"/>
-                            <constraint firstItem="3Vf-Oc-i9R" firstAttribute="trailing" secondItem="tVA-mW-aro" secondAttribute="trailingMargin" id="79g-Pc-5S7"/>
-                            <constraint firstItem="bR5-p1-P8R" firstAttribute="leading" secondItem="22A-pI-d4v" secondAttribute="leading" id="AOa-5t-OXc"/>
-                            <constraint firstItem="1ee-LS-lGQ" firstAttribute="top" secondItem="jE6-YI-Lin" secondAttribute="bottom" constant="46" id="BkE-Ff-Noa"/>
-                            <constraint firstItem="3Vf-Oc-i9R" firstAttribute="trailing" secondItem="bR5-p1-P8R" secondAttribute="trailing" id="GT1-15-ldR"/>
-                            <constraint firstItem="22A-pI-d4v" firstAttribute="trailing" secondItem="jE6-YI-Lin" secondAttribute="trailing" id="TZ4-2q-4tY"/>
-                            <constraint firstItem="3Vf-Oc-i9R" firstAttribute="top" secondItem="phu-aQ-zFi" secondAttribute="top" constant="56" id="UMr-xm-i1X"/>
-                            <constraint firstItem="jE6-YI-Lin" firstAttribute="top" secondItem="22A-pI-d4v" secondAttribute="bottom" constant="8" symbolic="YES" id="XJE-BY-CJp"/>
-                            <constraint firstItem="22A-pI-d4v" firstAttribute="leading" secondItem="jE6-YI-Lin" secondAttribute="leading" id="YPq-l1-Wuu"/>
-                            <constraint firstItem="3Vf-Oc-i9R" firstAttribute="leading" secondItem="bR5-p1-P8R" secondAttribute="leading" id="cNm-mZ-fGN"/>
-                            <constraint firstItem="jE6-YI-Lin" firstAttribute="trailing" secondItem="1ee-LS-lGQ" secondAttribute="trailing" id="d8C-LA-YS0"/>
-                            <constraint firstItem="bR5-p1-P8R" firstAttribute="top" secondItem="tVA-mW-aro" secondAttribute="top" constant="259" id="l4P-ba-BDn"/>
-                            <constraint firstItem="bR5-p1-P8R" firstAttribute="trailing" secondItem="22A-pI-d4v" secondAttribute="trailing" id="oRm-gC-5rs"/>
-                            <constraint firstItem="3Vf-Oc-i9R" firstAttribute="leading" secondItem="tVA-mW-aro" secondAttribute="leadingMargin" id="rkG-3f-XxD"/>
-                            <constraint firstItem="jE6-YI-Lin" firstAttribute="leading" secondItem="1ee-LS-lGQ" secondAttribute="leading" id="wH7-rw-D5Z"/>
+                            <constraint firstItem="22A-pI-d4v" firstAttribute="trailing" secondItem="jE6-YI-Lin" secondAttribute="trailing" id="008-hu-27w"/>
+                            <constraint firstItem="5oX-fj-OHx" firstAttribute="leading" secondItem="YaH-pW-KGc" secondAttribute="leading" id="2Ce-qm-Hfv"/>
+                            <constraint firstItem="bR5-p1-P8R" firstAttribute="top" secondItem="HOk-5l-C5J" secondAttribute="bottom" constant="8" symbolic="YES" id="7Qi-IX-IZC"/>
+                            <constraint firstItem="bR5-p1-P8R" firstAttribute="leading" secondItem="22A-pI-d4v" secondAttribute="leading" id="7fM-g9-8hd"/>
+                            <constraint firstItem="jE6-YI-Lin" firstAttribute="trailing" secondItem="1ee-LS-lGQ" secondAttribute="trailing" id="CFk-te-HSr"/>
+                            <constraint firstItem="5oX-fj-OHx" firstAttribute="top" secondItem="3Vf-Oc-i9R" secondAttribute="bottom" constant="45" id="CKP-B3-SGx"/>
+                            <constraint firstItem="1ee-LS-lGQ" firstAttribute="top" secondItem="jE6-YI-Lin" secondAttribute="bottom" constant="46" id="EUe-ha-07x"/>
+                            <constraint firstItem="22A-pI-d4v" firstAttribute="leading" secondItem="jE6-YI-Lin" secondAttribute="leading" id="FFd-Eu-PIt"/>
+                            <constraint firstItem="jE6-YI-Lin" firstAttribute="leading" secondItem="1ee-LS-lGQ" secondAttribute="leading" id="KHH-dn-gCM"/>
+                            <constraint firstItem="YaH-pW-KGc" firstAttribute="trailing" secondItem="Koc-Gf-ZWW" secondAttribute="trailing" id="Mro-Nw-f3Q"/>
+                            <constraint firstItem="Koc-Gf-ZWW" firstAttribute="trailing" secondItem="HOk-5l-C5J" secondAttribute="trailing" id="NUB-Mp-SX7"/>
+                            <constraint firstItem="bR5-p1-P8R" firstAttribute="trailing" secondItem="22A-pI-d4v" secondAttribute="trailing" id="OgD-nl-rsB"/>
+                            <constraint firstItem="Koc-Gf-ZWW" firstAttribute="leading" secondItem="HOk-5l-C5J" secondAttribute="leading" id="PO2-SC-yfJ"/>
+                            <constraint firstItem="YaH-pW-KGc" firstAttribute="top" secondItem="5oX-fj-OHx" secondAttribute="bottom" constant="8" symbolic="YES" id="Pva-Wd-vfl"/>
+                            <constraint firstItem="5oX-fj-OHx" firstAttribute="trailing" secondItem="YaH-pW-KGc" secondAttribute="trailing" id="Up5-GB-bhh"/>
+                            <constraint firstItem="3Vf-Oc-i9R" firstAttribute="leading" secondItem="5oX-fj-OHx" secondAttribute="leading" id="WiT-zK-JJL"/>
+                            <constraint firstItem="Koc-Gf-ZWW" firstAttribute="top" secondItem="YaH-pW-KGc" secondAttribute="bottom" constant="20" id="Ycd-xN-DId"/>
+                            <constraint firstItem="3Vf-Oc-i9R" firstAttribute="top" secondItem="phu-aQ-zFi" secondAttribute="top" constant="56" id="bGH-eL-bku"/>
+                            <constraint firstItem="3Vf-Oc-i9R" firstAttribute="trailing" secondItem="tVA-mW-aro" secondAttribute="trailingMargin" id="e2t-lD-g1m"/>
+                            <constraint firstItem="YaH-pW-KGc" firstAttribute="leading" secondItem="Koc-Gf-ZWW" secondAttribute="leading" id="fhC-Ns-E10"/>
+                            <constraint firstItem="3Vf-Oc-i9R" firstAttribute="leading" secondItem="tVA-mW-aro" secondAttribute="leadingMargin" id="h96-Zf-2ex"/>
+                            <constraint firstItem="3Vf-Oc-i9R" firstAttribute="trailing" secondItem="5oX-fj-OHx" secondAttribute="trailing" id="iV7-xq-vHS"/>
+                            <constraint firstItem="HOk-5l-C5J" firstAttribute="leading" secondItem="bR5-p1-P8R" secondAttribute="leading" id="iwW-QL-0m7"/>
+                            <constraint firstItem="jE6-YI-Lin" firstAttribute="top" secondItem="22A-pI-d4v" secondAttribute="bottom" constant="8" symbolic="YES" id="jVE-ga-mFC"/>
+                            <constraint firstItem="22A-pI-d4v" firstAttribute="top" secondItem="bR5-p1-P8R" secondAttribute="bottom" constant="48" id="rsY-Pz-edc"/>
+                            <constraint firstItem="HOk-5l-C5J" firstAttribute="trailing" secondItem="bR5-p1-P8R" secondAttribute="trailing" id="xFs-Fn-VeL"/>
+                            <constraint firstItem="HOk-5l-C5J" firstAttribute="top" secondItem="Koc-Gf-ZWW" secondAttribute="bottom" constant="8" symbolic="YES" id="xSq-uV-vj4"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="phu-aQ-zFi"/>
                     </view>
                     <connections>
+                        <outlet property="descriptionTV" destination="HOk-5l-C5J" id="DHX-cO-Ef1"/>
                         <outlet property="statusLabel" destination="jE6-YI-Lin" id="gKF-mD-00O"/>
                         <outlet property="successLabel" destination="1ee-LS-lGQ" id="UXn-Jp-oUz"/>
+                        <outlet property="titleTF" destination="YaH-pW-KGc" id="kCv-TX-QGn"/>
                         <outlet property="uploadBtn" destination="bR5-p1-P8R" id="0YL-tc-4TM"/>
                     </connections>
                 </viewController>
