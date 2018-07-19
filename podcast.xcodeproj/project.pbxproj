@@ -11,6 +11,7 @@
 		75F69614E43655F2ACC3AD0F /* Pods_podcast.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1384C9D3F53193EFA97620A6 /* Pods_podcast.framework */; };
 		C6FCE8A3EB4D05FDF45B812D /* Pods_podcastTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DF8E4DB8CA6937C4C21DC84 /* Pods_podcastTests.framework */; };
 		F611F8A320FD8C8D00A086DC /* UploadAudioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F611F8A220FD8C8D00A086DC /* UploadAudioViewController.swift */; };
+		F66FE15F210026780042CCA9 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F66FE15E210026780042CCA9 /* SignupViewController.swift */; };
 		F68B57B520F43987009A0001 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68B57B420F43987009A0001 /* AppDelegate.swift */; };
 		F68B57B720F43987009A0001 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68B57B620F43987009A0001 /* ViewController.swift */; };
 		F68B57BA20F43987009A0001 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F68B57B820F43987009A0001 /* Main.storyboard */; };
@@ -53,6 +54,7 @@
 		D2759DC53515887C1B50A347 /* Pods-podcastUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-podcastUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-podcastUITests/Pods-podcastUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		ED548FCD10F875B58B1FD138 /* Pods-podcastTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-podcastTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-podcastTests/Pods-podcastTests.debug.xcconfig"; sourceTree = "<group>"; };
 		F611F8A220FD8C8D00A086DC /* UploadAudioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadAudioViewController.swift; sourceTree = "<group>"; };
+		F66FE15E210026780042CCA9 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		F68B57B120F43987009A0001 /* podcast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = podcast.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F68B57B420F43987009A0001 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F68B57B620F43987009A0001 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -152,6 +154,7 @@
 				F68B57B620F43987009A0001 /* ViewController.swift */,
 				F6E1005320F447B2009A9CE9 /* PodcastTableViewCell.swift */,
 				F6E1005520F452FA009A9CE9 /* PodcastsTableViewController.swift */,
+				F66FE15E210026780042CCA9 /* SignupViewController.swift */,
 				F68B57BB20F43989009A0001 /* Assets.xcassets */,
 				F68B57B820F43987009A0001 /* Main.storyboard */,
 				F68B57BD20F43989009A0001 /* LaunchScreen.storyboard */,
@@ -191,6 +194,7 @@
 				F68B57AE20F43987009A0001 /* Frameworks */,
 				F68B57AF20F43987009A0001 /* Resources */,
 				13681BA93576E385871C396D /* [CP] Embed Pods Frameworks */,
+				79A7F7DDBB9C967EA0AD3D90 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -320,12 +324,20 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-podcast/Pods-podcast-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
@@ -351,6 +363,30 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		79A7F7DDBB9C967EA0AD3D90 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-podcast/Pods-podcast-resources.sh",
+				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseAuthUI.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseFacebookAuthUI.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseGoogleAuthUI.bundle",
+				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebaseAuthUI.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebaseFacebookAuthUI.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebaseGoogleAuthUI.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-podcast/Pods-podcast-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		7AD60DA565E3713E891FFF3E /* [CP] Check Pods Manifest.lock */ = {
@@ -396,6 +432,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F66FE15F210026780042CCA9 /* SignupViewController.swift in Sources */,
 				F6E1005620F452FA009A9CE9 /* PodcastsTableViewController.swift in Sources */,
 				F68B57B720F43987009A0001 /* ViewController.swift in Sources */,
 				F6E1005420F447B2009A9CE9 /* PodcastTableViewCell.swift in Sources */,

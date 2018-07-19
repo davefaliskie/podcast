@@ -72,17 +72,18 @@ class UploadAudioViewController: UIViewController, UITextFieldDelegate, UITextVi
         let storageRef = storage.reference()
         
         // Local file you want to upload
-        let localFile = URL(fileURLWithPath: "/Users/DaveFaliskie/Desktop/test55.m4a")
+        let localFile = URL(fileURLWithPath: "/Users/DaveFaliskie/Desktop/taoofseneca_vol1-1.pdf")
         
         // Create a reference to the file you want to upload, this gives the name meta data.
-        let castRef = storageRef.child("podcasts/\(titleTF.text!)")
+        let castRef = storageRef.child("podcasts/Dave/\(titleTF.text!)")
         
         // Create the file metadata
         let metadata = StorageMetadata()
-//        metadata.contentType = "podcast/audio"
         metadata.customMetadata = [
             "UserName" : "Dave (Update to user name)",
-            "Description" : self.descriptionTV.text
+            "Description" : self.descriptionTV.text,
+            "DeviceType" : "\(UIDevice.current.model)",
+            "DeviceOS" : "\(UIDevice.current.systemVersion)"
         ]
         
         
