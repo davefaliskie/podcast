@@ -16,6 +16,9 @@ class UploadAudioViewController: UIViewController, UITextFieldDelegate, UITextVi
     @IBOutlet weak var titleTF: UITextField!
     @IBOutlet weak var descriptionTV: UITextView!
     
+    // audioFileURL which can be passed from the RecordViewController
+    var audioFileURL: String!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -72,7 +75,7 @@ class UploadAudioViewController: UIViewController, UITextFieldDelegate, UITextVi
         let storageRef = storage.reference()
         
         // Local file you want to upload
-        let localFile = URL(fileURLWithPath: "/Users/DaveFaliskie/Desktop/taoofseneca_vol1-1.pdf")
+        let localFile = URL(fileURLWithPath: audioFileURL)
         
         // Create a reference to the file you want to upload, this gives the name meta data.
         let castRef = storageRef.child("podcasts/Dave/\(titleTF.text!)")

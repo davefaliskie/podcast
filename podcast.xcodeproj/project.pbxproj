@@ -24,6 +24,7 @@
 		F68B57E520F43A7A009A0001 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F68B57E220F43A7A009A0001 /* GoogleService-Info.plist */; };
 		F6E1005420F447B2009A9CE9 /* PodcastTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E1005320F447B2009A9CE9 /* PodcastTableViewCell.swift */; };
 		F6E1005620F452FA009A9CE9 /* PodcastsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E1005520F452FA009A9CE9 /* PodcastsTableViewController.swift */; };
+		F6E878172106C73E0064DDE2 /* RecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E878162106C73E0064DDE2 /* RecordViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,7 @@
 		F68B57E220F43A7A009A0001 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F6E1005320F447B2009A9CE9 /* PodcastTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastTableViewCell.swift; sourceTree = "<group>"; };
 		F6E1005520F452FA009A9CE9 /* PodcastsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastsTableViewController.swift; sourceTree = "<group>"; };
+		F6E878162106C73E0064DDE2 /* RecordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +157,7 @@
 				F6E1005320F447B2009A9CE9 /* PodcastTableViewCell.swift */,
 				F6E1005520F452FA009A9CE9 /* PodcastsTableViewController.swift */,
 				F66FE15E210026780042CCA9 /* SignupViewController.swift */,
+				F6E878162106C73E0064DDE2 /* RecordViewController.swift */,
 				F68B57BB20F43989009A0001 /* Assets.xcassets */,
 				F68B57B820F43987009A0001 /* Main.storyboard */,
 				F68B57BD20F43989009A0001 /* LaunchScreen.storyboard */,
@@ -435,6 +438,7 @@
 				F66FE15F210026780042CCA9 /* SignupViewController.swift in Sources */,
 				F6E1005620F452FA009A9CE9 /* PodcastsTableViewController.swift in Sources */,
 				F68B57B720F43987009A0001 /* ViewController.swift in Sources */,
+				F6E878172106C73E0064DDE2 /* RecordViewController.swift in Sources */,
 				F6E1005420F447B2009A9CE9 /* PodcastTableViewCell.swift in Sources */,
 				F68B57B520F43987009A0001 /* AppDelegate.swift in Sources */,
 				F611F8A320FD8C8D00A086DC /* UploadAudioViewController.swift in Sources */,
